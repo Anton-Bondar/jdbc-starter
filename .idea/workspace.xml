@@ -4,6 +4,7 @@
     <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/TransactionRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/TransactionRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JdbcRunner">
+  <component name="RunManager" selected="Application.TransactionRunner">
     <configuration name="JdbcRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dmdev.starter.JdbcRunner" />
       <module name="jdbc-starter" />
@@ -91,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JdbcRunner" />
         <item itemvalue="Application.TransactionRunner" />
+        <item itemvalue="Application.JdbcRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +115,7 @@
       <workItem from="1680469380867" duration="158000" />
       <workItem from="1680535032660" duration="4090000" />
       <workItem from="1680623004163" duration="4624000" />
-      <workItem from="1680680679401" duration="4080000" />
+      <workItem from="1680680679401" duration="8652000" />
     </task>
     <task id="LOCAL-00001" summary="-add ConnectionManager for getting Connection &#10;-add properties for db connection">
       <created>1679856327873</created>
@@ -130,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680640243866</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-add method createInfo">
+      <created>1680702243512</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680702243512</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,18 +147,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-add ConnectionManager for getting Connection &#10;-add properties for db connection" />
     <MESSAGE value="-add Transaction example." />
-    <option name="LAST_COMMIT_MESSAGE" value="-add Transaction example." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/dmdev/starter/util/ConnectionManager.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="-add method createInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add method createInfo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
