@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="-add Transaction example.">
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/TransactionRunner.java" afterDir="false" />
+    <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" afterDir="false" />
     </list>
@@ -63,7 +62,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TransactionRunner">
+  <component name="RunManager" selected="Application.JdbcRunner">
     <configuration name="JdbcRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dmdev.starter.JdbcRunner" />
       <module name="jdbc-starter" />
@@ -92,8 +91,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TransactionRunner" />
         <item itemvalue="Application.JdbcRunner" />
+        <item itemvalue="Application.TransactionRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +113,8 @@
       <workItem from="1680469254569" duration="89000" />
       <workItem from="1680469380867" duration="158000" />
       <workItem from="1680535032660" duration="4090000" />
-      <workItem from="1680623004163" duration="4151000" />
+      <workItem from="1680623004163" duration="4624000" />
+      <workItem from="1680680679401" duration="4080000" />
     </task>
     <task id="LOCAL-00001" summary="-add ConnectionManager for getting Connection &#10;-add properties for db connection">
       <created>1679856327873</created>
@@ -123,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679856327873</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="-add Transaction example.">
+      <created>1680640243866</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680640243866</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
