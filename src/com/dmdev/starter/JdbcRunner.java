@@ -1,6 +1,7 @@
 package com.dmdev.starter;
 
 import com.dmdev.starter.util.ConnectionManager;
+import com.dmdev.starter.util.ConnectionPool;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -12,22 +13,27 @@ public class JdbcRunner {
 
     public static void main(String[] args) throws SQLException {
         var flightId = 2L;
-        List<Long> result = getTicketsByFlightId(flightId);
-        System.out.format("Tickets %s for flight id %s", result, flightId);
-
-        LocalDateTime startDate = LocalDate.of(2020, 1, 1).atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now();
-        List<Long> flights = getFlightsBetween(startDate, endDate);
+//        List<Long> result = getTicketsByFlightId(flightId);
+//        System.out.format("Tickets %s for flight id %s", result, flightId);
+//
+//        LocalDateTime startDate = LocalDate.of(2020, 1, 1).atStartOfDay();
+//        LocalDateTime endDate = LocalDateTime.now();
+//        List<Long> flights = getFlightsBetween(startDate, endDate);
+//        System.out.format("\nNew info created with id %d ", createInfo("My info"));
+//        System.out.format("\nFlights between %s and %s are: %s", startDate, endDate, flights);
         String dbName = "flight_repository";
-        List<String> allTables = getAllTables(dbName);
-        System.out.format("\nFlights between %s and %s are: %s", startDate, endDate, flights);
+        List<String> allTables;
+        try {
+            allTables = getAllTables(dbName);
+        } finally {
+            ConnectionPool.closePool();
+        }
         System.out.format("\nDB %s has following tables are: %s", dbName, allTables);
-        System.out.format("\nNew info created with id %d ", createInfo("My info"));
     }
 
     public static List<String> getAllTables(String dbName) throws SQLException {
         List<String> result = new ArrayList<>();
-        try (var connection = ConnectionManager.open()) {
+        try (var connection = ConnectionPool.get()) {
             DatabaseMetaData metaData = connection.getMetaData();
             ResultSet catalogs = metaData.getCatalogs();
             while (catalogs.next()) {

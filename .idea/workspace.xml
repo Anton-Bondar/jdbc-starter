@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/BlobRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/util/ConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/boeng777.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/TransactionRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/TransactionRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +64,24 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dmdev.starter.util" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.TransactionRunner">
+  <component name="RunManager" selected="Application.JdbcRunner">
+    <configuration name="BlobRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dmdev.starter.BlobRunner" />
+      <module name="jdbc-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dmdev.starter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JdbcRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dmdev.starter.JdbcRunner" />
       <module name="jdbc-starter" />
@@ -92,8 +110,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TransactionRunner" />
         <item itemvalue="Application.JdbcRunner" />
+        <item itemvalue="Application.BlobRunner" />
+        <item itemvalue="Application.TransactionRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +134,8 @@
       <workItem from="1680469380867" duration="158000" />
       <workItem from="1680535032660" duration="4090000" />
       <workItem from="1680623004163" duration="4624000" />
-      <workItem from="1680680679401" duration="8652000" />
+      <workItem from="1680680679401" duration="13881000" />
+      <workItem from="1680770301705" duration="5995000" />
     </task>
     <task id="LOCAL-00001" summary="-add ConnectionManager for getting Connection &#10;-add properties for db connection">
       <created>1679856327873</created>
@@ -138,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680702243512</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-add method bulk delete">
+      <created>1680707646304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680707646304</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +175,8 @@
     <MESSAGE value="-add ConnectionManager for getting Connection &#10;-add properties for db connection" />
     <MESSAGE value="-add Transaction example." />
     <MESSAGE value="-add method createInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add method createInfo" />
+    <MESSAGE value="-add method bulk delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add method bulk delete" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
