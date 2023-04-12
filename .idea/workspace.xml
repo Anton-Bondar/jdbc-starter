@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/BlobRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/util/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/boeng777.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/BasicConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" afterDir="false" />
     </list>
@@ -135,7 +133,9 @@
       <workItem from="1680535032660" duration="4090000" />
       <workItem from="1680623004163" duration="4624000" />
       <workItem from="1680680679401" duration="13881000" />
-      <workItem from="1680770301705" duration="5995000" />
+      <workItem from="1680770301705" duration="7246000" />
+      <workItem from="1681229169551" duration="396000" />
+      <workItem from="1681304839253" duration="7451000" />
     </task>
     <task id="LOCAL-00001" summary="-add ConnectionManager for getting Connection &#10;-add properties for db connection">
       <created>1679856327873</created>
@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680707646304</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add connectionPool">
+      <created>1680778476872</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680778476872</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +183,19 @@
     <MESSAGE value="-add Transaction example." />
     <MESSAGE value="-add method createInfo" />
     <MESSAGE value="-add method bulk delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add method bulk delete" />
+    <MESSAGE value="add connectionPool" />
+    <option name="LAST_COMMIT_MESSAGE" value="add connectionPool" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/dmdev/starter/BasicConnectionPool.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

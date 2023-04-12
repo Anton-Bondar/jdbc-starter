@@ -16,11 +16,18 @@ public class JdbcRunner {
 //        List<Long> result = getTicketsByFlightId(flightId);
 //        System.out.format("Tickets %s for flight id %s", result, flightId);
 //
-//        LocalDateTime startDate = LocalDate.of(2020, 1, 1).atStartOfDay();
-//        LocalDateTime endDate = LocalDateTime.now();
-//        List<Long> flights = getFlightsBetween(startDate, endDate);
+        LocalDateTime startDate = LocalDate.of(2020, 1, 1).atStartOfDay();
+        LocalDateTime endDate = LocalDateTime.now();
+        BasicConnectionPool basicConnectionPool = BasicConnectionPool.create();
+        List<Long> flights;
+        try {
+            flights = getFlightsBetween(startDate, endDate, basicConnectionPool.getConnection());
+        } finally {
+            basicConnectionPool.shutdown();
+        }
+
 //        System.out.format("\nNew info created with id %d ", createInfo("My info"));
-//        System.out.format("\nFlights between %s and %s are: %s", startDate, endDate, flights);
+        System.out.format("\nFlights between %s and %s are: %s", startDate, endDate, flights);
         String dbName = "flight_repository";
         List<String> allTables;
         try {
@@ -53,15 +60,15 @@ public class JdbcRunner {
         return result;
     }
 
-    private static List<Long> getFlightsBetween(LocalDateTime startDate, LocalDateTime endDate) throws SQLException {
+    private static List<Long> getFlightsBetween(LocalDateTime startDate, LocalDateTime endDate, Connection connection) throws SQLException {
         List<Long> result = new ArrayList<>();
         String sql = """
                 SELECT id 
                 FROM flight
                 WHERE departure_date BETWEEN ? AND ?
                 """;
-        try (var connection = ConnectionManager.open();
-             var preparedStatement = connection.prepareStatement(sql)) {
+
+        try (var preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setFetchSize(50);
             preparedStatement.setQueryTimeout(10);
             preparedStatement.setMaxRows(100);
