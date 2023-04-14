@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/DaoRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/exception/DaoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/BasicConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/util/BasicConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/JdbcRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/DaoRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/DaoRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +155,8 @@
       <workItem from="1681304839253" duration="7802000" />
       <workItem from="1681328171131" duration="1496000" />
       <workItem from="1681410944869" duration="4428000" />
+      <workItem from="1681417968240" duration="323000" />
+      <workItem from="1681460042818" duration="6219000" />
     </task>
     <task id="LOCAL-00001" summary="-add ConnectionManager for getting Connection &#10;-add properties for db connection">
       <created>1679856327873</created>
@@ -202,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681315676010</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="TicketDao">
+      <created>1681418109328</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681418109328</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +220,8 @@
     <MESSAGE value="-add method bulk delete" />
     <MESSAGE value="add connectionPool" />
     <MESSAGE value="add connectionPool without reflection." />
-    <option name="LAST_COMMIT_MESSAGE" value="add connectionPool without reflection." />
+    <MESSAGE value="TicketDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="TicketDao" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
