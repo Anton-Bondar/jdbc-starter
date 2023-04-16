@@ -1,5 +1,6 @@
 package com.dmdev.starter;
 
+import com.dmdev.starter.dao.TicketDao;
 import com.dmdev.starter.dto.TicketFilter;
 import com.dmdev.starter.entity.Ticket;
 
@@ -15,6 +16,8 @@ public class DaoRunner {
         //updateTest();
         //findAllTest();
         findAllWithPagination();
+        var flight = TicketDao.getInstance().findById(5L);
+        System.out.println("flight: "+flight);
     }
 
     private static void findAllWithPagination() {
@@ -54,7 +57,7 @@ public class DaoRunner {
         var ticket = new Ticket();
         ticket.setPassengerNo("12345678");
         ticket.setPassengerName("Test");
-        ticket.setFlightId(3L);
+        //ticket.setFlightId(3L);
         ticket.setSeatNo("B3");
         ticket.setCost(BigDecimal.TEN);
 

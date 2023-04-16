@@ -1,6 +1,7 @@
-package com.dmdev.starter;
+package com.dmdev.starter.dao;
 
 import com.dmdev.starter.dto.TicketFilter;
+import com.dmdev.starter.entity.Flight;
 import com.dmdev.starter.entity.Ticket;
 import com.dmdev.starter.exception.DaoException;
 import com.dmdev.starter.util.ConnectionPool;
@@ -8,7 +9,6 @@ import com.dmdev.starter.util.ConnectionPool;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -29,11 +29,24 @@ public class TicketDao {
             WHERE id = ? 
             """;
     private static final String FIND_ALL_SQL = """
-                        SELECT id, passenger_no, passenger_name, flight_id, seat_no, cost
+                        SELECT ticket.id, 
+                        passenger_no, 
+                        passenger_name, 
+                        flight_id, 
+                        seat_no, 
+                        cost,
+                        f.status,
+                        f.aircraft_id,
+                        f.arrival_airport_code,
+                        f.arrival_date,
+                        f.departure_airport_code,
+                        f.departure_date
                         FROM ticket
+                        JOIN flight f 
+                        ON ticket.flight_id = f.id
             """;
     private static final String FIND_BY_ID = FIND_ALL_SQL + """ 
-            WHERE id = ?   
+            WHERE ticket.id = ?   
             """;
     public static final String LIMIT_OFFSET = " LIMIT ? OFFSET ?";
 
@@ -62,7 +75,7 @@ public class TicketDao {
 
             preparedStatement.setString(1, ticket.getPassengerNo());
             preparedStatement.setString(2, ticket.getPassengerName());
-            preparedStatement.setLong(3, ticket.getFlightId());
+            preparedStatement.setLong(3, ticket.getFlight().id());
             preparedStatement.setString(4, ticket.getSeatNo());
             preparedStatement.setBigDecimal(5, ticket.getCost());
 
@@ -83,7 +96,7 @@ public class TicketDao {
 
             preparedStatement.setString(1, ticket.getPassengerNo());
             preparedStatement.setString(2, ticket.getPassengerName());
-            preparedStatement.setLong(3, ticket.getFlightId());
+            preparedStatement.setLong(3, ticket.getFlight().id());
             preparedStatement.setString(4, ticket.getSeatNo());
             preparedStatement.setBigDecimal(5, ticket.getCost());
             preparedStatement.setLong(6, ticket.getId());
@@ -163,11 +176,21 @@ public class TicketDao {
     }
 
     private Ticket buildTicket(ResultSet resultSet) throws SQLException {
+        var flight = new Flight(
+                resultSet.getLong("flight_id"),
+                resultSet.getString("seat_no"),
+                resultSet.getTimestamp("departure_date").toLocalDateTime(),
+                resultSet.getString("departure_airport_code"),
+                resultSet.getTimestamp("arrival_date").toLocalDateTime(),
+                resultSet.getString("arrival_airport_code"),
+                resultSet.getInt("aircraft_id"),
+                resultSet.getString("status")
+        );
         return new Ticket(
                 resultSet.getLong("id"),
                 resultSet.getString("passenger_no"),
                 resultSet.getString("passenger_name"),
-                resultSet.getLong("flight_id"),
+                flight,
                 resultSet.getString("seat_no"),
                 resultSet.getBigDecimal("cost")
         );

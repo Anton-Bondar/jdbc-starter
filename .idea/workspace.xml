@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="TicketDao final implementation">
-      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/dto/TicketFilter.java" afterDir="false" />
+    <list default="true" id="33b16e55-51ad-424f-882e-d046c853399a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/dmdev/starter/entity/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/DaoRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/DaoRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/entity/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/dao/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dmdev/starter/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dmdev/starter/entity/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +163,7 @@
       <workItem from="1681460042818" duration="7022000" />
       <workItem from="1681482068346" duration="188000" />
       <workItem from="1681562741536" duration="8288000" />
+      <workItem from="1681658619398" duration="2264000" />
     </task>
     <task id="LOCAL-00001" summary="-add ConnectionManager for getting Connection &#10;-add properties for db connection">
       <created>1679856327873</created>
@@ -219,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681475231025</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="findAll method with filtration">
+      <created>1681658713329</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681658713329</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,18 +243,8 @@
     <MESSAGE value="add connectionPool without reflection." />
     <MESSAGE value="TicketDao" />
     <MESSAGE value="TicketDao final implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="TicketDao final implementation" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/dmdev/starter/TicketDao.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="findAll method with filtration" />
+    <option name="LAST_COMMIT_MESSAGE" value="findAll method with filtration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
