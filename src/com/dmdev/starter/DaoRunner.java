@@ -1,5 +1,8 @@
 package com.dmdev.starter;
 
+import com.dmdev.starter.dto.TicketFilter;
+import com.dmdev.starter.entity.Ticket;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +13,15 @@ public class DaoRunner {
         //createTest();
         //deleteTest();
         //updateTest();
-        findAllTest();
+        //findAllTest();
+        findAllWithPagination();
+    }
+
+    private static void findAllWithPagination() {
+        var ticketDao = TicketDao.getInstance();
+        var ticketFilter = new TicketFilter(3, 0, null, "A1");
+        List<Ticket> tickets = ticketDao.findAll(ticketFilter);
+        System.out.println("Filtered tickets: "+tickets);
     }
 
     private static void findAllTest() {

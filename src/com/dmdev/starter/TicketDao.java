@@ -1,12 +1,16 @@
 package com.dmdev.starter;
 
+import com.dmdev.starter.dto.TicketFilter;
+import com.dmdev.starter.entity.Ticket;
 import com.dmdev.starter.exception.DaoException;
 import com.dmdev.starter.util.ConnectionPool;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TicketDao {
 
@@ -31,6 +35,7 @@ public class TicketDao {
     private static final String FIND_BY_ID = FIND_ALL_SQL + """ 
             WHERE id = ?   
             """;
+    public static final String LIMIT_OFFSET = " LIMIT ? OFFSET ?";
 
     private TicketDao() {
     }
@@ -84,6 +89,45 @@ public class TicketDao {
             preparedStatement.setLong(6, ticket.getId());
 
             preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        }
+    }
+
+    public List<Ticket> findAll(TicketFilter filter) {
+        List<Object> parameters = new ArrayList<>();
+        List<String> whereSql = new ArrayList<>();
+
+        if (filter.seatNo() != null) {
+            whereSql.add("seat_no LIKE ?");
+            parameters.add("%" + filter.seatNo() + "%");
+        }
+
+        if (filter.passengerName() != null) {
+            whereSql.add("passenger_name = ?");
+            parameters.add(filter.passengerName());
+        }
+        parameters.add(filter.limit());
+        parameters.add(filter.offset());
+
+        String where = whereSql.isEmpty() ? "" : whereSql.stream()
+                .collect(Collectors.joining(" AND ", " WHERE ", ""));
+
+        var sql = FIND_ALL_SQL + where + LIMIT_OFFSET;
+
+        try (var connection = ConnectionPool.get();
+             var preparedStatement = connection.prepareStatement(sql)) {
+            for (int i = 0; i < parameters.size(); i++) {
+                preparedStatement.setObject(i + 1, parameters.get(i));
+            }
+
+            System.out.println("Query: " + preparedStatement);
+            List<Ticket> tickets = new ArrayList<>();
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                tickets.add(buildTicket(resultSet));
+            }
+            return tickets;
         } catch (SQLException e) {
             throw new DaoException(e);
         }

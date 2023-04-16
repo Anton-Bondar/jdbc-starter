@@ -1,4 +1,4 @@
-package com.dmdev.starter;
+package com.dmdev.starter.entity;
 
 import java.math.BigDecimal;
 
