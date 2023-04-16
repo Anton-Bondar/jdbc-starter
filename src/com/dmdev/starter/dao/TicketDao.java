@@ -188,7 +188,8 @@ public class TicketDao {
         );
         return new Ticket(
                 resultSet.getLong("id"),
-                resultSet.getString("passenger_no"),
+                // null safe
+                resultSet.getObject("passenger_no", String.class),
                 resultSet.getString("passenger_name"),
                 flight,
                 resultSet.getString("seat_no"),
